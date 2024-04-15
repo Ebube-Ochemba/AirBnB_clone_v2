@@ -1,0 +1,6 @@
+*~
+*.pyc
+*#
+__pycache__
+file.json
+w3c_validator.py
