@@ -41,7 +41,7 @@ class DBStorage:
         Return:
             Dict of queried classes, format: <class name>.<obj id> = obj.
         """
-        if not cls:  # create new SQL query object & make object list of tables.
+        if not cls:  # create new SQL query object & make object list of tables
             qry_obj = self.__session.query(Amenity)
             qry_obj.extend(self.__session.query(City))
             qry_obj.extend(self.__session.query(Place))
@@ -52,7 +52,7 @@ class DBStorage:
             qry_obj = qry_obj = self.__session.query(cls)
 
         result = {'{}.{}'.format(type(obj).__name__, obj.id):
-                      obj for obj in qry_obj}
+                  obj for obj in qry_obj}
         return (result)
 
     def new(self, obj):
