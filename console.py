@@ -161,9 +161,15 @@ class HBNBCommand(cmd.Cmd):
         #  Build dictionary from parsed args
         class_attributes = self.dict_creator(arg_list[1:])
 
-        new_instance = HBNBCommand.classes[class_name](**class_attributes)
-        print(new_instance.id)
+        # Create a new instance of the class
+        new_instance = HBNBCommand.classes[class_name]()
+
+        # Set attributes on the new instance
+        for key, value in class_attributes.items():
+            setattr(new_instance, key, value)
+
         new_instance.save()
+        print(new_instance.id)
 
     def help_create(self):
         """ Help information for the create method """
