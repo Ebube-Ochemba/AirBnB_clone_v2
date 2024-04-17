@@ -158,7 +158,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        #  Build dictionary from parsed args
+        # Build dictionary from parsed args
         class_attributes = self.dict_creator(arg_list[1:])
 
         # Create a new instance of the class
