@@ -5,3 +5,4 @@ __pycache__
 file.json
 w3c_validator.py
 test_params_create
+main_delete.py
