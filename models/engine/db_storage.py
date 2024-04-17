@@ -27,7 +27,6 @@ class DBStorage:
         psswd = getenv("HBNB_MYSQL_PWD")
         host = getenv("HBNB_MYSQL_HOST")
         dtbs = getenv("HBNB_MYSQL_DB")
-        env = getenv("HBNB_ENV")
         url = "mysql+mysqldb://{}:{}@{}/{}".format(usr, psswd, host, dtbs)
         self.__engine = create_engine(url, pool_pre_ping=True)
 
