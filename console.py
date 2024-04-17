@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         """Parse and validate attributes from command arguments."""
 
         attributes = {}  # attribute dictionary
-        for arg in arg_list:  # Splitting the argument into key and value
+        for arg in arg_list:
 
             key_value = arg.split("=")  # string splitting
             if len(key_value) != 2:
@@ -140,8 +140,8 @@ class HBNBCommand(cmd.Cmd):
                 except ValueError:
                     continue
 
-                # Adding key-value pair to attributes dictionary
-                attributes[key] = value
+            # Adding key-value pair to attributes dictionary
+            attributes[key] = value
 
         return (attributes)
 
