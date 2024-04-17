@@ -121,12 +121,12 @@ class HBNBCommand(cmd.Cmd):
 
         for arg in arg_list[1:]:
         # Splitting the argument into key and value
-            key_value = arg.split("=")
+            key_value = arg.split("=")  # string splitting
 
             if len(key_value) != 2:
                 continue
 
-            key, value = key_value
+            key, value = key_value  # tuple unpacking
 
             # Handling string value
             if value.startswith('"') and value.endswith('"'):
@@ -160,6 +160,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
+        #  Build dictionary from parsed args
         class_attributes = self.dict_creator(arg_list[1:])
 
         new_instance = HBNBCommand.classes[class_name](**class_attributes)
