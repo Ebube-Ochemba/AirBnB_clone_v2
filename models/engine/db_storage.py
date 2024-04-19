@@ -49,7 +49,7 @@ class DBStorage:
             qry_obj.extend(self.__session.query(State))
             qry_obj.extend(self.__session.query(User))
         else:
-            qry_obj = qry_obj = self.__session.query(cls)
+            qry_obj = self.__session.query(cls)
 
         result = {'{}.{}'.format(type(obj).__name__, obj.id):
                   obj for obj in qry_obj}
