@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 
 # Create necessary folders if they don't exist
-sudo mkdir -p /data/web_static/releases/test /data/web_static/shared /data/web_static/current
+sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
 
 # Create a fake HTML file
 echo "<html><head></head><body>Holberton School</body></html>" | sudo tee /data/web_static/releases/test/index.html > /dev/null
