@@ -6,7 +6,6 @@ contents of the 'web_static' folder.
 
 from datetime import datetime
 from fabric.api import local
-from os.path import isdir
 
 
 def do_pack():
