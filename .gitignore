@@ -8,3 +8,4 @@ test_params_create
 main_delete.py
 main_place_amenities.py
 transfer_file
+myenv
