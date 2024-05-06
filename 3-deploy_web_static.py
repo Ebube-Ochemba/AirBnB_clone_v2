@@ -22,7 +22,7 @@ def do_pack():
         print("Packing web_static to {}".format(filename))
         local("tar -cvzf {} web_static".format(filename))
         return filename
-    except Exception as ex:
+    except Exception as e:
         return None
 
 
