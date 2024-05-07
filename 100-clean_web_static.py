@@ -15,8 +15,11 @@ def do_clean(number=0):
 
     try:
         number = int(number)
-        if number <= 1:
-            number = 1
+        if number < 0:
+            return False
+
+        # Ensure we keep at least the most recent version
+        number = max(1, number)
 
         # Delete archives locally
         local("ls -t versions | tail -n +{} | "
