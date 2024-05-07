@@ -15,8 +15,8 @@ def do_clean(number=0):
 
     try:
         number = int(number)
-        if number < 0:
-            return False
+        if number <= 1:
+            number = 1
 
         # Delete archives locally
         local("ls -t versions | tail -n +{} | "
