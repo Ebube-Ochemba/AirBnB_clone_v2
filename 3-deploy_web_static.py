@@ -12,8 +12,6 @@ env.hosts = ['52.86.25.3', '35.153.194.184']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/id_rsa'
 
-# Global variable to store the archive path
-archive_path = None
 
 def do_pack():
     """Creates a .tgz archive"""
@@ -57,7 +55,7 @@ def do_deploy(archive_path):
 def deploy():
     """Creates and distributes an archive to your web servers.
     """
-    archive_path = do_pack()
-    if not archive_path:
+    arc_path = do_pack()
+    if not arc_path:
         return False
-    return do_deploy(archive_path)
+    return do_deploy(arc_path)
