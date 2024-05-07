@@ -14,22 +14,20 @@ def do_clean(number=0):
     """Deletes out-of-date archives"""
 
     try:
-        number = int(number)
-        if number < 0:
-            return False
+        if int(number) == 0:
+            number = 1
 
         # Ensure we keep at least the most recent version
-        number = max(1, number)
+        number = int(number) + 1
 
         # Delete archives locally
-        local("ls -t versions | tail -n +{} | "
-              "xargs -I {{}} rm versions/{{}}".format(number + 1))
+        local("ls -dt versions/* | tail -n +{} | sudo "
+              "xargs rm -fr".format(number))
 
         # Delete archives locally
-        releases_path = "/data/web_static/releases/*"
-        run("ls -t {} | tail -n +{} | "
-            "xargs -I {{}} rm -rf {}/{{}}".format(releases_path, number + 1,
-                                                  releases_path))
+        remote_path = "/data/web_static/releases/*"
+        run("ls -dt {} | tail -n +{} | sudo "
+            "xargs rm -fr".format(remmote_path, number))
 
         return True
     except Exception as e:
