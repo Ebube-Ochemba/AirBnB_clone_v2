@@ -12,6 +12,8 @@ env.hosts = ['52.86.25.3', '35.153.194.184']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/id_rsa'
 
+# Global variable to store the archive path
+archive_path = None
 
 def do_pack():
     """Creates a .tgz archive"""
