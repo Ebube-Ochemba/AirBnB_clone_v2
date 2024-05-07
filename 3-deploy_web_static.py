@@ -14,7 +14,8 @@ env.key_filename = '~/.ssh/id_rsa'
 
 
 def do_pack():
-    """Creates a .tgz archive"""
+    """Creates a '.tgz' archive"""
+
     try:
         local("mkdir -p versions")
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -53,8 +54,8 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """Creates and distributes an archive to your web servers.
-    """
+    """Creates and distributes an archive to your web servers."""
+
     arc_path = do_pack()
     if not arc_path:
         return False
