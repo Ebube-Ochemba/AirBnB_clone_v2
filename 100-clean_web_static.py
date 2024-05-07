@@ -23,12 +23,12 @@ def do_clean(number=0):
 
         # Delete archives locally
         local("ls -t versions | tail -n +{} | "
-              "xargs -I {{}} rm versions/{{}}".format(number + 1))
+              "sudo xargs -I {{}} rm versions/{{}}".format(number + 1))
 
         # Delete archives locally
         releases_path = "/data/web_static/releases"
         run("ls -t {} | tail -n +{} | "
-            "xargs -I {{}} rm -rf {}/{{}}".format(releases_path, number + 1,
+            " sudo xargs -I {{}} rm -rf {}/{{}}".format(releases_path, number + 1,
                                                   releases_path))
 
         return True
