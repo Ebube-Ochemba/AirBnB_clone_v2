@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to start a Flask web application"""
+"""A script that starts a Flask web application"""
 
 from flask import Flask
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello():
-    """Display 'Hello HBNB!'"""
+    """route definition for root"""
     return 'Hello HBNB!'
 
 
