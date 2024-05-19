@@ -20,9 +20,14 @@ class State(BaseModel, Base):
 
         @property
         def cities(self):
+            """Getter for cities if storage engine != DBStorage"""
             cities_list = []
+
+            # Retrieve all City objects from storage
             all_cities = models.storage.all(City).values()
+
+            # Filter cities by state_id matching the current state's id
             for cty in all_cities:
                 if cty.state_id == self.id:
                     cities_list.append(cty)
-            return (cities_list)
+            return cities_list
