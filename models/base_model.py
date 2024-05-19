@@ -46,9 +46,10 @@ class BaseModel:
                 kwargs['updated_at'] = datetime\
                                         .strptime(kwargs['updated_at'], fmt)
 
-            for key, value in kwargs.items():
-                if key not in ('id', 'created_at', 'updated_at', '__class__'):
-                    setattr(self, key, value)
+            if '__class__' in kwargs:
+                del kwargs['__class__']
+
+            self.__dict__.update(kwargs)
 
     def __str__(self):
         """Returns a string representation of the instance"""
