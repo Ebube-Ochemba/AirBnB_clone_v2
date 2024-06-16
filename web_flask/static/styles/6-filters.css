@@ -43,6 +43,9 @@
 
 	max-height: 300px;
 	overflow: auto;
+
+	position: relative;
+	z-index: 9;
 }
 
 .locations:hover .popover {
